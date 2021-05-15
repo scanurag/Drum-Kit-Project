@@ -6,7 +6,7 @@ function addingEventListener(){
     for (let i=0;i<numDrums;i++){
         let which_drum = drums[i].innerText;
         drums[i].addEventListener("click",function(){ 
-            playSound(which_drum); }
+            playSound(which_drum); }  //playSound(this.innerText) also works;
         );
     }
 }
