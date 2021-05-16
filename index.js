@@ -1,4 +1,5 @@
-function addingEventListener(){
+// Adding event listeners for click on drums
+function addingEventListenerToClick(){
 
     let drums = document.querySelectorAll(".drum"); //array
     let numDrums = drums.length; //7
@@ -11,6 +12,14 @@ function addingEventListener(){
     }
 }
 
+// Adding event listeners for pressing keys on keyboard
+function addingEventListenerToKeys(){
+    document.addEventListener("keypress", function(event){ 
+            playSound(event.key); } 
+        );
+}
+
+//function to play sound accroding to drum clicked/pressed
 function playSound(which_drum){
 
     if (which_drum === "w"){
@@ -48,4 +57,6 @@ function playSound(which_drum){
         a.play();
     }
 }
-addingEventListener();
+
+addingEventListenerToClick();
+addingEventListenerToKeys();
