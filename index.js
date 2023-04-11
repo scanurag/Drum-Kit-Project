@@ -7,7 +7,9 @@ function addingEventListenerToClick(){
     for (let i=0;i<numDrums;i++){
         let which_drum = drums[i].innerText;
         drums[i].addEventListener("click",function(){ 
-            playSound(which_drum); }  //playSound(this.innerText) also works;
+            playSound(which_drum); //playSound(this.innerText) also works;
+            animateDrums(which_drum);
+        }
         );
     }
 }
@@ -15,7 +17,9 @@ function addingEventListenerToClick(){
 // Adding event listeners for pressing keys on keyboard
 function addingEventListenerToKeys(){
     document.addEventListener("keypress", function(event){ 
-            playSound(event.key); } 
+            playSound(event.key); 
+            animateDrums(event.key)
+        } 
         );
 }
 
@@ -58,5 +62,15 @@ function playSound(which_drum){
     }
 }
 
+// function to show animation on click/pressed
+function animateDrums(currentKey){
+
+    var pressedKey = document.querySelector("." + currentKey)
+    pressedKey.classList.add("pressed")
+
+    setTimeout(() => {
+        pressedKey.classList.remove("pressed")
+    }, 100);
+}
 addingEventListenerToClick();
 addingEventListenerToKeys();

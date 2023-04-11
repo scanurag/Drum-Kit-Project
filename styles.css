@@ -1,6 +1,10 @@
 body {
   text-align: center;
-  background-color: #283149;
+  background-image: url("./images/kit.jpg");
+  background-size: cover;   
+      background-position: fixed;
+    
+
 }
 
 h1 {
@@ -64,7 +68,7 @@ footer {
 
 .drum {
   outline: none;
-  border: 10px solid #404B69;
+  border: 5px solid white;
   font-size: 5rem;
   font-family: 'Arvo', cursive;
   line-height: 2;
@@ -78,4 +82,8 @@ footer {
   text-align: center;
   margin: 10px;
   background-color: white;
+}
+.drum:hover{
+  box-shadow: 0 0 15px orange;
+
 }
